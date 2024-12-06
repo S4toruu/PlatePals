@@ -1,0 +1,23 @@
+.headerDefault {
+  @apply p-4 border-b border-grey-cool-200;
+}
+.headerDefault .headerTop {
+  @apply flex mb-4;
+}
+.headerDefault .headerTop .searchWrapper {
+  @apply relative flex-1 px-6;
+}
+.headerDefault .headerTop > nav ul {
+  @apply relative m-auto;
+}
+.headerDefault .headerBottom nav ul {
+  @apply m-auto;
+}
+.headerDefault nav {
+  @apply flex items-center;
+}
+.headerDefault nav ul li {
+  @apply inline-block px-2;
+}
+
+/*# sourceMappingURL=header.module.css.map */

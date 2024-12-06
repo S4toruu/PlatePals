@@ -1,0 +1,25 @@
+.headerDefault {
+  @apply p-4 border-b border-grey-cool-200;
+  .headerTop {
+    @apply flex mb-4;
+    .searchWrapper {
+      @apply relative flex-1 px-6;
+    }
+    > nav {
+      ul {
+        @apply relative m-auto;
+      }
+    }
+  }
+  .headerBottom {
+    nav ul {
+      @apply m-auto;
+    }
+  }
+  nav {
+    @apply flex items-center;
+  }
+  nav ul li {
+    @apply inline-block px-2;
+  }
+}

@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  @apply font-quicksand;
+}
+
+/* <Forms>
+    This file contains styles for form elements. It is meant to be used in conjunction with the
+    form elements provided by the @tailwindcss/forms plugin.
+*/
+
+input[type=text], input[type=password], input.ais-SearchBox-input {
+  @apply inline-block w-full appearance-none focus:outline-none bg-transparent px-4 py-2;
+}
+.hasText ~ label,
+textarea:focus-within ~ label,
+input:focus-within ~ label,
+input:not(:placeholder-shown) ~ label,
+input:-webkit-autofill ~ label,
+input.ais-SearchBox-input ~ label {
+  @apply origin-top-left scale-75 -translate-y-6 p-0 text-blue;
+}
+input.disabled, input.ais-SearchBox-input.disabled {
+  @apply bg-grey-cool-200 text-grey-cool-400;
+}
+.labelDefault {
+  @apply py-2 px-4 absolute top-0 left-0 duration-300 text-grey-cool-400;
+}
+.fieldDefault {
+  @apply relative border border-grey-cool-300 rounded-sm focus-within:border-blue shadow-sm;
+  &.no-outline {
+    @apply border-t-0 border-l-0 border-r-0 border-b-2 rounded-none;
+  }
+}
+.fieldError {
+  @apply relative border border-red rounded-sm focus-within:border-blue shadow-sm;
+  &.noOutline {
+    @apply border-t-0 border-l-0 border-r-0 border-b-2 rounded-none;
+  }
+}
+.formElement {
+  @apply my-6;
+}
+.checkboxWrapper {
+  @apply relative;
+  > label {
+    @apply relative text-grey-cool-400 scale-0 translate-y-0 #{!important};
+  }
+}
+.checkboxDefault {
+  @apply w-4 h-4 bg-grey-cool-500 rounded-sm border border-grey-cool-300;
+}
+
+/* <Algolia>
+    This file contains styles for the Algolia search component.
+ */
+
+.ais-SearchBox-form {
+  @apply relative border border-grey-cool-300 rounded-sm focus-within:border-blue shadow-sm;
+  input {
+    @apply w-full;
+  }
+  .ais-SearchBox-submit, .ais-SearchBox-reset {
+    @apply hidden;
+  }
+}
+
+.ais-Hits {
+  @apply absolute z-10 bg-white shadow-md rounded-b-sm p-4;
+  .ais-Hits-item {
+    @apply mb-2;
+    &:last-child {
+      @apply mb-0;
+    }
+  }
+}
+
+.ais-Highlight-highlighted {
+  @apply bg-yellow;
+}

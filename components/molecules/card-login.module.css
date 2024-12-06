@@ -1,0 +1,14 @@
+.cardLogin {
+  @apply max-w-[500px] m-auto bg-white p-8;
+}
+.cardLogin.shadow {
+  @apply rounded-md shadow-md;
+}
+.cardLogin.checkout {
+  @apply text-left max-w-full p-0;
+}
+.cardLogin button:first-of-type {
+  @apply mr-2;
+}
+
+/*# sourceMappingURL=card-login.module.css.map */

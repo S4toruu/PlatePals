@@ -1,0 +1,50 @@
+.buttonDefault {
+  @apply bg-transparent border-white border-2 transition inline-flex items-center text-center duration-300 pt-3 pb-3 px-7 md:px-8 font-bold text-sm rounded-sm cursor-pointer;
+}
+.buttonDefault.dark-grey {
+  @apply border-grey-cool-800 text-grey-cool-800 hover:bg-grey-cool-800 hover:text-white;
+}
+.buttonDefault.dark-grey.fill {
+  @apply bg-grey-cool-800 text-white hover:bg-white hover:text-grey-cool-800;
+}
+.buttonDefault.orange {
+  @apply border-orange text-orange hover:bg-orange hover:text-white;
+}
+.buttonDefault.orange.fill {
+  @apply bg-orange text-white hover:bg-white hover:text-orange;
+}
+.buttonDefault.green {
+  @apply border-green text-green hover:bg-green hover:text-white;
+}
+.buttonDefault.green.fill {
+  @apply bg-green text-white hover:bg-white hover:text-green;
+}
+.buttonDefault.blue {
+  @apply border-blue text-blue hover:bg-blue hover:text-white;
+}
+.buttonDefault.blue.fill {
+  @apply bg-blue text-white hover:bg-white hover:text-blue;
+}
+.buttonDefault.purple {
+  @apply border-purple text-purple hover:bg-purple hover:text-white;
+}
+.buttonDefault.purple.fill {
+  @apply bg-purple text-white hover:bg-white hover:text-purple;
+}
+.buttonDefault.disabled {
+  @apply border-grey-cool-400 text-grey-cool-400 cursor-not-allowed;
+}
+.buttonDefault.circle {
+  @apply rounded-full px-3;
+}
+.buttonDefault.ingredient {
+  @apply border border-grey-cool-300;
+}
+.buttonDefault.ingredient.left {
+  @apply bg-white text-grey-cool-900 rounded-tl-sm rounded-bl-sm rounded-r-none;
+}
+.buttonDefault.ingredient.right {
+  @apply bg-white text-grey-cool-900 rounded-tr-sm rounded-br-sm rounded-l-none;
+}
+
+/*# sourceMappingURL=button.module.css.map */

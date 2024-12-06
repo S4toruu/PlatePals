@@ -1,0 +1,15 @@
+.cardLogin {
+  @apply max-w-[500px] m-auto bg-white p-8;
+  &.shadow {
+    @apply rounded-md shadow-md;
+  }
+  &.checkout {
+    @apply text-left max-w-full p-0;
+  }
+  .error {
+  }
+  button:first-of-type {
+    @apply mr-2;
+  }
+}
+

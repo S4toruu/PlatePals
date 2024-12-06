@@ -1,0 +1,48 @@
+.buttonDefault {
+  @apply bg-transparent border-white border-2 transition inline-flex items-center text-center duration-300 pt-3 pb-3 px-7 md:px-8 font-bold text-sm rounded-sm cursor-pointer;
+  &.dark-grey {
+    @apply border-grey-cool-800 text-grey-cool-800 hover:bg-grey-cool-800 hover:text-white;
+    &.fill {
+      @apply bg-grey-cool-800 text-white hover:bg-white hover:text-grey-cool-800;
+    }
+  }
+  &.orange {
+    @apply border-orange text-orange hover:bg-orange hover:text-white;
+    &.fill {
+      @apply bg-orange text-white hover:bg-white hover:text-orange;
+    }
+  }
+  &.green {
+    @apply border-green text-green hover:bg-green hover:text-white;
+    &.fill {
+      @apply bg-green text-white hover:bg-white hover:text-green;
+    }
+  }
+  &.blue {
+    @apply border-blue text-blue hover:bg-blue hover:text-white;
+    &.fill {
+      @apply bg-blue text-white hover:bg-white hover:text-blue;
+    }
+  }
+  &.purple {
+    @apply border-purple text-purple hover:bg-purple hover:text-white;
+    &.fill {
+      @apply bg-purple text-white hover:bg-white hover:text-purple;
+    }
+  }
+  &.disabled {
+    @apply border-grey-cool-400 text-grey-cool-400 cursor-not-allowed;
+  }
+  &.circle {
+    @apply rounded-full px-3;
+  }
+  &.ingredient {
+    @apply border border-grey-cool-300;
+    &.left {
+      @apply bg-white text-grey-cool-900 rounded-tl-sm rounded-bl-sm rounded-r-none;
+    }
+    &.right {
+      @apply bg-white text-grey-cool-900 rounded-tr-sm rounded-br-sm rounded-l-none;
+    }
+  }
+}

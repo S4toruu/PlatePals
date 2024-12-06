@@ -1,0 +1,23 @@
+.recipeFull {
+  @apply py-6 flex;
+}
+.recipeFull h1 {
+  @apply text-3xl font-bold mb-4;
+}
+.recipeFull h2 {
+  @apply text-2xl font-rubik mb-4;
+}
+.recipeFull p {
+  @apply font-bold mb-4;
+}
+.recipeFull > div:first-child {
+  @apply max-w-[400px] mr-0 xl:mr-8;
+}
+.recipeFull .servingsWrapper {
+  @apply flex mb-4;
+}
+.recipeFull .servingsWrapper .servings {
+  @apply inline-flex bg-white text-grey-cool-900 pt-3 pb-3 px-7 md:px-8 border-t border-b border-grey-cool-300;
+}
+
+/*# sourceMappingURL=recipe--full.module.css.map */

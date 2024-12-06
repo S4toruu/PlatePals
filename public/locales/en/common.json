@@ -1,0 +1,18 @@
+{
+  "form-field-required": "This field is required",
+  "form-field-length": "This field requires a minimum length of {0} characters and a maximum length of {1} characters",
+  "form-field-email": "This field requires a valid email address",
+  "contract-intro": "Quadient USA offers state & local government agencies the ability to order multiple products at pre-negotiated prices. To ensure you are receiving your contract price, please view the pricing catalog below.",
+  "contract-more-info": "More information",
+  "contract-contact": "Contact",
+  "contract-admin": "Contact Administration",
+  "contract-contact-sales": "Contact Sales",
+  "contract-number": "Contract Number",
+  "contract-coverage": "Contract Coverage - Start Date",
+  "contract-coverage-end": "Contract Coverage - End Date",
+  "contract-supplies": "Contract Supplies",
+  "contract-documents": "Contract Documents",
+  "contract-state-term-contract": "State Contract",
+  "contract-category": "Category",
+  "learn-more": "Learn More"
+}

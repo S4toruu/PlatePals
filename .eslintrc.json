@@ -1,0 +1,34 @@
+{
+  "extends": [
+    "next",
+    "airbnb",
+    "airbnb/hooks",
+    // "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  // "parser": "@typescript-eslint/parser",
+  "root": true,
+  "rules": {
+    "semi": ["error", "never"],
+    "comma-dangle": ["error", "never"],
+    "no-plusplus": "off",
+    "no-param-reassign": "off",
+    "import/extensions": "off",
+    "max-len": ["error", { "code": 500 }],
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "consistent-return": "off",
+    "array-callback-return": "off",
+    "no-use-before-define": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-nested-ternary": "off",
+    "camelcase": "off"
+  }
+}

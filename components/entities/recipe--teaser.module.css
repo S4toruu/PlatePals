@@ -1,0 +1,14 @@
+.recipeTeaser {
+  @apply bg-white shadow-md rounded-md p-4;
+}
+.recipeTeaser img {
+  @apply mb-4;
+}
+.recipeTeaser h3 {
+  @apply font-rubik text-xl mb-1;
+}
+.recipeTeaser .rank li {
+  @apply inline-block;
+}
+
+/*# sourceMappingURL=recipe--teaser.module.css.map */
