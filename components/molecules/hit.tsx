@@ -18,7 +18,7 @@ interface HitProps {
 export function Hit({ hit }: HitProps) {
   return (
     <div className={styles.hitItem}>
-      <Link href={`recipe/${hit.slug}`}>
+      <Link href={`/recipe/${hit.slug}`}>
         <span>
           {' '}
           <Highlight attribute="title" hit={hit} />
