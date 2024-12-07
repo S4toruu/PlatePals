@@ -7,6 +7,9 @@
 .recipeTeaser h3 {
   @apply font-rubik text-xl mb-1;
 }
+.recipeTeaser .rank {
+  @apply cursor-pointer;
+}
 .recipeTeaser .rank li {
   @apply inline-block;
 }

@@ -7,6 +7,7 @@
     @apply font-rubik text-xl mb-1;
   }
   .rank {
+    @apply cursor-pointer;
     li {
       @apply inline-block;
     }
