@@ -9,14 +9,19 @@ export default async function handler(
 ) {
   try {
     if (req.method === 'GET') {
-      const { id } = req.query
+      const { id, includeVotes } = req.query
 
       if (!id) {
         return res.status(400).json({ message: 'Recipe ID is required' })
       }
-      const recipe = await prisma.recipe.findFirst({
-        where: { id: Number(id) }
-      })
+      const options = {
+        where: { id: Number(id) },
+        include: {}
+      }
+      if (includeVotes) {
+        options.include = { votes: true }
+      }
+      const recipe = await prisma.recipe.findFirst(options)
       return res.status(200).json({ recipe })
     }
     return res.status(405).json({ message: 'Method not allowed' })
