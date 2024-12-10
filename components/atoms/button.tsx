@@ -21,11 +21,11 @@ export function Button({
   if (fill) {
     classes.push(styles.fill)
   }
-  if (color && !disabled) {
+  if (color && color !== 'transparent' && !disabled) {
     classes.push(styles[color])
   } else if (disabled) {
     classes.push(styles.disabled)
-  } else {
+  } else if (color !== 'transparent') {
     classes.push(styles.orange)
   }
   if (modifier) {
