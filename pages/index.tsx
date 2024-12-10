@@ -3,8 +3,11 @@ import { GetServerSidePropsResult } from 'next'
 import { PrismaClient } from '@prisma/client'
 import { groupBy } from 'lodash'
 
+import { useModal } from 'context/modal-context'
 import { Layout } from 'components/layout'
 import { RecipeTeaser } from 'components/entities/recipe--teaser'
+import { Modal } from 'components/molecules/modal'
+import { CardLogin } from 'components/molecules/card-login'
 
 const prisma = new PrismaClient()
 
@@ -13,6 +16,7 @@ interface IndexPageProps {
 }
 
 export default function IndexPage({ recipesByTypes }: IndexPageProps) {
+  const { isOpen } = useModal()
   return (
     <Layout>
       <Head>
@@ -36,6 +40,11 @@ export default function IndexPage({ recipesByTypes }: IndexPageProps) {
             </div>
           ))}
         </div>
+        {isOpen && (
+          <Modal>
+            <CardLogin />
+          </Modal>
+        )}
       </div>
     </Layout>
   )

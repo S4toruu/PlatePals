@@ -8,6 +8,9 @@ import {
   mdiStar, mdiStarHalfFull, mdiStarOutline
 } from '@mdi/js'
 import Icon from '@mdi/react'
+
+import { useModal } from 'context/modal-context'
+
 import styles from './recipe--teaser.module.scss'
 
 interface ExtendedRecipe extends Recipe {
@@ -19,14 +22,13 @@ export interface recipeTeaserProps {
 }
 
 export function RecipeTeaser({ recipe }: recipeTeaserProps) {
+  const { openModal } = useModal()
   const [fullStars, setFullStars] = useState<number>(Math.floor(recipe.averageStars))
   const [halfStar, setHalfStar] = useState<boolean>(recipe.averageStars % 1 >= 0.5)
   const [currentRecipe, setCurrentRecipe] = useState<ExtendedRecipe | null>(recipe)
   const [session, setSession] = useState<Session | null>(null)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [clickedIndex, setClickedIndex] = useState<number | null>(null)
-  // const fullStars = Math.floor(currentRecipe.averageStars)
-  // const halfStar = currentRecipe.averageStars % 1 >= 0.5
 
   getSession().then((sess) => {
     setSession(sess)
@@ -57,7 +59,7 @@ export function RecipeTeaser({ recipe }: recipeTeaserProps) {
       setFullStars(Math.floor(averageStars))
       setHalfStar(averageStars % 1 >= 0.5)
     } else {
-      // todo display login modal
+      openModal()
     }
   }
 
@@ -87,7 +89,7 @@ export function RecipeTeaser({ recipe }: recipeTeaserProps) {
             onClick={() => handleRatingClick(i)}
           >
             <Icon
-              color={clickedIndex === i ? '#d8f94e' : 'black'}
+              color={clickedIndex !== null && i <= clickedIndex ? '#ff4200' : 'black'}
               path={hoveredIndex !== null && i <= hoveredIndex ? mdiStar : (i < fullStars ? mdiStar : (i === fullStars && halfStar ? mdiStarHalfFull : mdiStarOutline))}
               size={1}
             />

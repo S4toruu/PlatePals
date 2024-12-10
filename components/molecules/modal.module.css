@@ -1,0 +1,26 @@
+.modalDefault {
+  @apply relative z-50;
+}
+.modalDefault .dialog {
+  @apply fixed inset-0 z-10 overflow-y-auto;
+}
+.modalDefault .dialogBg {
+  @apply flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0 flex-wrap content-start md:content-center;
+}
+.modalDefault .dialogContent {
+  @apply relative rounded-md;
+}
+.modalDefault .closeBtn {
+  @apply absolute top-[6px] right-[9px] z-20;
+}
+.modalDefault .closeBtn button {
+  @apply fill-grey-cool-800 p-0 border-0;
+}
+.modalDefault .closeBtn svg {
+  @apply max-w-[14px];
+}
+.modalDefault .closeBtn > button:hover {
+  @apply opacity-50;
+}
+
+/*# sourceMappingURL=modal.module.css.map */

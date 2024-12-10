@@ -50,9 +50,8 @@ export default async function handler(
         return { id: newIngredient.id, amount: ingredient.amount }
       }))
 
-      console.log(ingredientIds)
-
       const recipe = await prisma.recipe.create({
+        // @ts-ignore
         data: {
           title: String(title),
           description: String(description),
