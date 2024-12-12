@@ -1,0 +1,9 @@
+.formGroupIngredient {
+  @apply flex mb-6;
+  > div {
+    @apply mr-2;
+  }
+  ul {
+    @apply px-4 py-2;
+  }
+}

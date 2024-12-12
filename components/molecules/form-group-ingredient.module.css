@@ -1,0 +1,11 @@
+.formGroupIngredient {
+  @apply flex mb-6;
+}
+.formGroupIngredient > div {
+  @apply mr-2;
+}
+.formGroupIngredient ul {
+  @apply px-4 py-2;
+}
+
+/*# sourceMappingURL=form-group-ingredient.module.css.map */
