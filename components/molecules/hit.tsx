@@ -9,22 +9,29 @@ interface HitProps {
     queryID: number
     __position: number
     title: string
-    type: string
-    slug: string
-  };
+    type?: string
+    slug?: string
+  }
 }
 
 // Define the Hit component to display each search result
 export function Hit({ hit }: HitProps) {
   return (
     <div className={styles.hitItem}>
-      <Link href={`/recipe/${hit.slug}`}>
+      {hit.type ? (
+        <Link href={`/recipe/${hit.slug}`}>
+          <span>
+            {' '}
+            <Highlight attribute="title" hit={hit} />
+          </span>
+          <span>{hit.type}</span>
+        </Link>
+      ) : (
         <span>
           {' '}
           <Highlight attribute="title" hit={hit} />
         </span>
-        <span>{hit.type}</span>
-      </Link>
+      )}
     </div>
   )
 }

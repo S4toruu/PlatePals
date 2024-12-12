@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import { liteClient as algoliasearch } from 'algoliasearch/lite'
 import {
   InstantSearch,
   SearchBox,
   Hits,
-  useInstantSearch
+  Configure
 } from 'react-instantsearch'
+import { searchClient, EmptyQueryBoundary } from 'lib/algolia'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -15,42 +15,6 @@ import { mdiAccount } from '@mdi/js'
 import { Hit } from 'components/molecules/hit'
 
 import styles from './header.module.scss'
-
-// Import your Algolia credentials (API Key, App ID)
-const searchClient = algoliasearch(
-  process.env.NEXT_PUBLIC_ALGOLIA_APP_ID!,
-  process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY!
-)
-
-interface EmptyQueryBoundaryProps {
-  children: any
-  fallback?: React.ReactNode
-}
-
-function EmptyQueryBoundary({ children, fallback }: EmptyQueryBoundaryProps) {
-  const { indexUiState, results } = useInstantSearch()
-
-  if (!indexUiState.query) {
-    return (
-      <>
-        {fallback}
-        <div hidden>{children}</div>
-      </>
-    )
-  }
-
-  // eslint-disable-next-line no-underscore-dangle
-  if (!results.__isArtificial && results.nbHits === 0) {
-    return (
-      <>
-        {fallback}
-        <div hidden>{children}</div>
-      </>
-    )
-  }
-
-  return children
-}
 
 export function Header() {
   const classes = [styles.headerDefault]
@@ -76,6 +40,7 @@ export function Header() {
       searchClient={searchClient}
       indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME}
     >
+      <Configure filters="category:recipe" />
       <header className={classes.join(' ')}>
         <div className={styles.headerTop}>
           <figure>
