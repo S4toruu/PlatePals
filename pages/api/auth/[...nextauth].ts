@@ -51,6 +51,20 @@ export const authOptions: NextAuthOptions = {
       // @ts-ignore
       session.id = token.sub
       return session
+    },
+    async redirect({ url, baseUrl }) {
+      const parsedUrl = new URL(url, baseUrl)
+      const callbackUrl = parsedUrl.searchParams.get('callback')
+
+      if (callbackUrl) {
+        return callbackUrl
+      }
+
+      // Allows relative callback URLs
+      if (url.startsWith('/')) return `${baseUrl}${url}`
+      // Allows callback URLs on the same origin
+      if (new URL(url).origin === baseUrl) return url
+      return baseUrl
     }
   }
 }
