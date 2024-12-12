@@ -26,18 +26,18 @@ export default async function handler(
         return res.status(400).json({ message: 'All fields are required' })
       }
 
-      if (typeof servings !== 'number') {
+      if (Number.isNaN(parseInt(servings, 10))) {
         return res.status(400).json({ message: 'Servings must be a number' })
       }
 
       ingredients.forEach((ingredient) => {
-        if (typeof ingredient.amount !== 'number' || Number.isNaN(ingredient.amount)) {
+        if (Number.isNaN(parseFloat(ingredient.amount))) {
           return res.status(400).json({ message: `Amount for ingredient ${ingredient.name} must be a valid number` })
         }
         ingredient.amount = parseFloat(ingredient.amount)
       })
 
-      const ingredientIds = await Promise.all(ingredients.map(async (ingredient: { name: string, amount: number }) => {
+      const ingredientIds = await Promise.all(ingredients.map(async (ingredient: any) => {
         const existingIngredient = await prisma.ingredient.findUnique({
           where: { name: ingredient.name }
         })
@@ -45,7 +45,7 @@ export default async function handler(
           return { id: existingIngredient.id, amount: ingredient.amount }
         }
         const newIngredient = await prisma.ingredient.create({
-          data: { name: ingredient.name }
+          data: { name: ingredient.name, unit: ingredient.unit }
         })
         return { id: newIngredient.id, amount: ingredient.amount }
       }))
@@ -54,9 +54,16 @@ export default async function handler(
         // @ts-ignore
         data: {
           title: String(title),
+          slug: title
+            .toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+            .replace(/\s+/g, '-') // Replace spaces with hyphens
+            .replace(/-+/g, '-') // Replace multiple hyphens with a single hyphen
+            .trim(),
           description: String(description),
           servings: Number(servings),
           type: String(type),
+          imageUrl: 'https://placehold.co/400x400.png',
           user: {
             // @ts-ignore
             connect: { id: Number(session.id) }
