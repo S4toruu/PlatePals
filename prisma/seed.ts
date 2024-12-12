@@ -38,7 +38,7 @@ async function main() {
     { name: 'Sugar', unit: Unit.GRAMS },
     { name: 'Butter', unit: Unit.GRAMS },
     { name: 'Eggs', unit: Unit.DEFAULT },
-    { name: 'Salt', unit: Unit.DEFAULT },
+    { name: 'Salt', unit: Unit.GRAMS },
     { name: 'Baking Powder', unit: Unit.DEFAULT },
     { name: 'Chocolate Chips', unit: Unit.GRAMS },
     { name: 'Cheese', unit: Unit.GRAMS },
