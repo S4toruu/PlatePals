@@ -1,0 +1,15 @@
+.selectDropdown {
+  width: 100% !important;
+  @apply max-h-32 shadow overflow-y-scroll absolute z-10 w-44 text-base list-none bg-white;
+}
+.selectDropdown button {
+  @apply w-full;
+}
+.selectDropdown ul {
+  @apply py-1;
+}
+.selectDropdown ul li {
+  @apply py-1 px-4 border-b border-grey-cool-200 truncate cursor-pointer text-left;
+}
+
+/*# sourceMappingURL=select.module.css.map */

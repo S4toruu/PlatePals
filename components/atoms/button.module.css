@@ -46,5 +46,8 @@
 .buttonDefault.ingredient.right {
   @apply bg-white text-grey-cool-900 rounded-tr-sm rounded-br-sm rounded-l-none;
 }
+.buttonDefault.select {
+  @apply border border-grey-cool-300 text-grey-cool-400 font-medium px-4 py-2;
+}
 
 /*# sourceMappingURL=button.module.css.map */
