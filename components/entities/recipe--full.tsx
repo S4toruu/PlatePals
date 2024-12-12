@@ -35,7 +35,6 @@ export function RecipeFull({ recipe }: recipeFullProps) {
     setIngredients(newIngredients)
   }, [servings, recipe.servings, recipe.ingredientNames])
   const updateServings = (type: string) => {
-    console.log('update ingredients')
     const newServings = type === 'plus' ? servings + 1 : servings - 1
     setServings(newServings)
   }
