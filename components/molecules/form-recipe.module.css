@@ -1,0 +1,11 @@
+.formRecipe h1 {
+  @apply text-3xl font-bold mb-4;
+}
+.formRecipe .formActions {
+  @apply mt-4;
+}
+.formRecipe .errorItem {
+  @apply text-red mt-1;
+}
+
+/*# sourceMappingURL=form-recipe.module.css.map */

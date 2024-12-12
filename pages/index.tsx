@@ -2,10 +2,13 @@ import Head from 'next/head'
 import { GetServerSidePropsResult } from 'next'
 import { PrismaClient } from '@prisma/client'
 import { groupBy } from 'lodash'
+import Icon from '@mdi/react'
+import { mdiPlusBoxOutline } from '@mdi/js'
 
 import { useModal } from 'context/modal-context'
 import { Layout } from 'components/layout'
 import { RecipeTeaser } from 'components/entities/recipe--teaser'
+import { Button } from 'components/atoms/button'
 import { Modal } from 'components/molecules/modal'
 import { CardLogin } from 'components/molecules/card-login'
 
@@ -27,6 +30,17 @@ export default function IndexPage({ recipesByTypes }: IndexPageProps) {
         />
       </Head>
       <div>
+        <div className="flex md:justify-end my-6">
+          <Button
+            target="_self"
+            href="/recipes/new"
+            fill
+          >
+            Add new recipe
+            {' '}
+            <Icon path={mdiPlusBoxOutline} size={1} />
+          </Button>
+        </div>
         <h1 className="text-3xl">Our Recipes</h1>
         <div className="mb-6">
           {Object.keys(recipesByTypes).map((type) => (
